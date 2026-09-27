@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Riftool",
+  "version": "1.0",
+  "description": "Seitenleiste für Capital Rift: Lager pro Ware und Ort, Fabriken, Engpässe, automatisches Abholen und Verkäufe in Schritten.",
+  "icons": {
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_title": "Riftool öffnen",
+    "default_icon": {
+      "128": "icon128.png"
+    }
+  },
+  "side_panel": {
+    "default_path": "panel.html"
+  },
+  "background": {
+    "service_worker": "bg.js"
+  },
+  "permissions": [
+    "sidePanel",
+    "scripting",
+    "storage",
+    "alarms",
+    "notifications"
+  ],
+  "host_permissions": [
+    "https://play.capitalrift.com/*"
+  ]
+}

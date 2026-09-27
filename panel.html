@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Riftool</title>
+<link rel="stylesheet" href="panel.css">
+</head>
+<body>
+<header>
+  <div class="top">
+    <h1 id="firma">Riftool</h1> <select id="firmaWechsel" title="Firma wechseln" style="max-width:170px"></select>
+    <span><button id="sprache" class="knopf" title="Sprache / Language">EN</button> <button id="neu" class="knopf" title="Jetzt aktualisieren">Aktualisieren</button></span>
+  </div>
+  <div class="meta"><span id="cash"></span><span id="stand">lädt…</span></div>
+  <nav class="reiter" role="tablist" aria-label="Bereiche">
+    <button data-r="lager" role="tab">Lager</button>
+    <button data-r="prod" role="tab">Fabriken</button>
+    <button data-r="eng" role="tab">Engpässe</button>
+  </nav>
+
+  <div id="ctl-lager" class="ctl">
+    <div class="bar">
+      <div class="seg" id="ansicht" role="group" aria-label="Ansicht">
+        <button data-v="ware">Nach Ware</button>
+        <button data-v="ort">Nach Ort</button>
+      </div>
+      <input id="q" type="search" placeholder="Suchen…" autocomplete="off" aria-label="Suchen">
+    </div>
+    <div class="bar">
+      <span class="lbl">Sortieren</span>
+      <div class="seg" id="sort" role="group" aria-label="Sortieren">
+        <button data-s="wert">Wert</button>
+        <button data-s="anzahl">Anzahl</button>
+        <button data-s="preis">Stückpreis</button>
+        <button data-s="name">A–Z</button>
+      </div>
+    </div>
+    <div class="bar">
+      <select id="firmaWahl" aria-label="Firmen">
+        <option value="aktiv">Aktive Firma</option>
+        <option value="alle">Alle Firmen</option>
+      </select>
+      <button id="sofort" class="knopf">Sofortverkauf berechnen</button>
+    </div>
+  </div>
+
+  <div id="ctl-prod" class="ctl" hidden>
+    <div class="bar"><button id="prodNeu" class="knopf">Maschinen neu laden</button><span id="prodStand" class="lbl"></span></div>
+  </div>
+
+</header>
+<main id="liste"></main>
+<script src="recipes.js"></script>
+<script src="shared.js"></script>
+<script src="i18n.js"></script>
+<script src="panel.js"></script>
+</body>
+</html>
